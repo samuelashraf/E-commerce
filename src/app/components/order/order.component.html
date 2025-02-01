@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="my-2 mx-3 col-sm-12 col-md-3">
+    <label for="cate" class="my-1">category</label>
+    <select name="" id="cate" class="form-control" [(ngModel)]="selectCat">
+      <option value="All">All product</option>
+      @for (cate of category; track $index) {
+      <option value="{{ cate }}">{{ cate }}</option>
+      }
+    </select>
+  </div>
+</div>
+<app-allproducts [recivedCatId]="selectCat"></app-allproducts>

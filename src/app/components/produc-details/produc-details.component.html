@@ -1,0 +1,33 @@
+<section class="box">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-sm-12">
+        <img [src]="productDetails.image" alt="this image" />
+      </div>
+      <div class="col-md-7 col-sm-12">
+        <div class="info">
+          <ul class="list-unstyled">
+            <li>
+              Title: <strong>{{ productDetails.title }}</strong>
+            </li>
+            <li>
+              Category: <strong>{{ productDetails.category }}</strong>
+            </li>
+            <li>
+              Descripiton: <strong>{{ productDetails.description }}</strong>
+            </li>
+            <li>
+              Reat: <strong>{{ productDetails.rating.rate }}</strong>
+            </li>
+            <li>
+              count: <strong>{{ productDetails.rating.count }}</strong>
+            </li>
+            <li>
+              Price: <strong>{{ productDetails.price }}</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

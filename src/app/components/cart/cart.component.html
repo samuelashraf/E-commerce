@@ -1,0 +1,61 @@
+<section class="card cart-box my-5">
+  <h1 class="text-danger">Shoping Cart</h1>
+  <div class="headcart d-flex justify-content-between">
+    <p class="lead">
+      You have <label class="text-danger">{{ countOfProduct }}</label
+      >item in your cart
+    </p>
+    <button class="btn text-danger card-header" (click)="clearCart()">
+      Clear Shopping Cart
+    </button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Price</th>
+        <th class="w-25">Quantity</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartProduct; let index = index">
+        <td><img src="{{ item.item.image }}" alt="imageProduct" /></td>
+        <td>{{ item.item.title }}</td>
+        <td>{{ item.item.price }}</td>
+        <td>
+          <div class="quantity">
+            <button class="btn btn-dark" (click)="plusAmount(index)">+</button>
+            <input
+              class="form-control"
+              type="number"
+              min="1"
+              [(ngModel)]="item.quantity"
+              (change)="detectInput(item.quantity, index)"
+            />
+            <button class="btn btn-dark" (click)="minsAmount(index)">-</button>
+          </div>
+        </td>
+        <td>{{ item.quantity * item.item.price }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteProduct(index)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="5" class="Total-price">Total:{{ totalPrice }}L.E</th>
+        <th>
+          <button class="btn btn-success" (click)="addCart()">Order Now</button>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</section>
+<div class="alert alert-success" role="alert" *ngIf="succsse">
+  <strong>Well done!</strong> your order is successfully Send
+</div>

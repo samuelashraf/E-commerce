@@ -1,0 +1,40 @@
+.cart-box {
+  padding: 0 20px;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+input {
+  margin: 0 10px;
+}
+
+tbody {
+  border-top: 1px solid #c61d21;
+  border-bottom: 1px solid #c61d21;
+}
+
+td {
+  border-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.Total-price {
+
+  text-align: end;
+}
+
+img {
+  width: 100%;
+  max-height: 50px;
+}
+
+.card-header:hover {
+  background-color: #FF0000 !important;
+  color: aliceblue !important;
+}
